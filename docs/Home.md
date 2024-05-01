@@ -1,79 +1,90 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+## Description
+`HomeScreen` is the main component of the application. This component manages the application's state, makes the API call to fetch the stargazers data from GitHub, and navigates to the 'Stargazers' screen with the fetched data.
 
-# Getting Started
+## State
+- `visibleDialog`: A boolean that controls the visibility of the error dialog.
+- `visibleprogress`: A boolean that controls the visibility of the loading dialog.
+- `owner`: A string that represents the owner of the repository on GitHub.
+- `repo`: A string that represents the name of the repository on GitHub.
+- `errorMessage`: A string that contains the error message to be displayed in the error dialog.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Methods
+- `fetchStargazers`: This method makes a GET call to the GitHub API to fetch the list of stargazers for a specific repository. It also handles errors during the API call.
 
-## Step 1: Start the Metro Server
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+# AppBarComponent
 
-```bash
-# using npm
-npm start
+## Description
+`AppBarComponent` is a component that displays the application bar at the top of the screen.
 
-# OR using Yarn
-yarn start
-```
+## Usage
+This component is used in `HomeScreen` to display the title of the application.
 
-## Step 2: Start your Application
+---
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+# CardComponent
 
-### For Android
+## Description
+`CardComponent` is a component that displays a card with text.
 
-```bash
-# using npm
-npm run android
+## Usage
+This component is used in `HomeScreen` to provide instructions to the user on how to use the application.
 
-# OR using Yarn
-yarn android
-```
+---
 
-### For iOS
+# DialogComponent
 
-```bash
-# using npm
-npm run ios
+## Description
+`DialogComponent` is a component that displays a dialog with an error message.
 
-# OR using Yarn
-yarn ios
-```
+## Props
+- `visibleDialog`: A boolean that controls the visibility of the dialog.
+- `errorMessage`: A string that contains the error message to be displayed.
+- `setVisibleDialog`: A function that sets the visibility of the dialog.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Usage
+This component is used in `HomeScreen` to display an error message when an error occurs during the API call.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+---
 
-## Step 3: Modifying your App
+# FooterComponent
 
-Now that you have successfully run the app, let's modify it.
+## Description
+`FooterComponent` is a component that displays a button.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+## Props
+- `fetchStargazers`: A function that is called when the user presses the button.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Usage
+This component is used in `HomeScreen` to provide a button that the user can press to start the search for stargazers.
 
-## Congratulations! :tada:
+---
 
-You've successfully run and modified your React Native App. :partying_face:
+# LoadingDialog
 
-### Now what?
+## Description
+`LoadingDialog` is a component that displays a loading dialog.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+## Props
+- `visibleprogress`: A boolean that controls the visibility of the loading dialog.
 
-# Troubleshooting
+## Usage
+This component is used in `HomeScreen` to display a loading indicator while the stargazers data is being retrieved from the GitHub API.
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+---
 
-# Learn More
+# TextInputGroup
 
-To learn more about React Native, take a look at the following resources:
+## Description
+`TextInputGroup` is a component that displays two input fields for the owner and the name of the repository.
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## Props
+- `owner`: A string that represents the owner of the repository.
+- `setOwner`: A function that sets the owner of the repository.
+- `repo`: A string that represents the name of the repository.
+- `setRepo`: A function that sets the name of the repository.
+
+## Usage
+This component is used in `HomeScreen` to allow the user to enter the owner and the name of the repository they wish to view the stargazers of.
+
