@@ -38,3 +38,10 @@ npm test
 # or
 yarn test
 ```
+
+## Download
+
+To download the compiled APK of the Stargazers Viewer app, click on the following link:
+
+[Download APK](https://drive.google.com/file/d/1EWUHSo9E2GXti57ii6FPMuCOldfA2K1x/view?usp=sharing)
+
